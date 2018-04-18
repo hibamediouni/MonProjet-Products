@@ -8,6 +8,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
 import { ProductsListService } from './services/products-list.service';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +18,8 @@ import { ProductsListService } from './services/products-list.service';
     ProductsListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [ProductsListService],
   bootstrap: [AppComponent]
