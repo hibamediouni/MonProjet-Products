@@ -12,10 +12,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RouterModule } from '@angular/router';
+import { ProductsDetailComponent } from './components/products-detail/products-detail.component';
 
 const tableDeRoutage = [
   { path: 'list', component: ProductsListComponent},
   { path: 'welcome', component: WelcomeComponent},
+  { path: 'product/:id', component: ProductsDetailComponent},
   { path: '', redirectTo: '/welcome' pathMatch: 'full'},  // pathMach == exactement vide
   { path: '**', component: NotFoundComponent}
 ];
@@ -26,7 +28,8 @@ const tableDeRoutage = [
     FooterComponent,
     ProductsListComponent,
     WelcomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ProductsDetailComponent
   ],
   imports: [
     BrowserModule,
