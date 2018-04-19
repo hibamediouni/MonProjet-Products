@@ -9,17 +9,29 @@ import { ProductsListComponent } from './components/products-list/products-list.
 import { ProductsListService } from './services/products-list.service';
 
 import { HttpClientModule } from '@angular/common/http';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { RouterModule } from '@angular/router';
 
+const tableDeRoutage = [
+  { path: 'list', component: ProductsListComponent},
+  { path: 'welcome', component: WelcomeComponent},
+  { path: '', redirectTo: '/welcome' pathMatch: 'full'},  // pathMach == exactement vide
+  { path: '**', component: NotFoundComponent}
+];
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    WelcomeComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(tableDeRoutage)  // activer root
   ],
   providers: [ProductsListService],
   bootstrap: [AppComponent]
