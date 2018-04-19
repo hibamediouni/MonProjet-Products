@@ -18,7 +18,7 @@ const tableDeRoutage = [
   { path: 'list', component: ProductsListComponent},
   { path: 'welcome', component: WelcomeComponent},
   { path: 'product/:id', component: ProductsDetailComponent},
-  { path: '', redirectTo: '/welcome' pathMatch: 'full'},  // pathMach == exactement vide
+  { path: '', redirectTo: '/welcome', pathMatch: 'full'},  // pathMach == exactement vide
   { path: '**', component: NotFoundComponent}
 ];
 @NgModule({
